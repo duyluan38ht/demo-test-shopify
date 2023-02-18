@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run development && npx tailwindcss -i ./src/lib/tailwind.css -o ./assets/tailwind.css",
+    "development": "mix",
+    "watch": "mix watch && npx tailwindcss -i ./src/lib/tailwind.css -o ./assets/tailwind.css --watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "tw": "npx tailwindcss -i ./src/lib/tailwind.css -o ./assets/tailwind.css --watch"
   },
   "repository": {
     "type": "git",
@@ -18,6 +25,9 @@
   },
   "homepage": "https://github.com/duyluan38ht/demo-test-shopify#readme",
   "devDependencies": {
-    "laravel-mix": "^6.0.49"
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.58.3",
+    "sass-loader": "^12.1.0"
   }
 }
